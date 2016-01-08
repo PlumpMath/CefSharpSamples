@@ -16,11 +16,13 @@ namespace CefSharpSample
         {
             InitializeCef();
 
-            InitializeComponent();
-
             var defaultUrl = ConfigurationManager.AppSettings["defaultUrl"] ?? "http://thinktecture.com";
 
-            DataContext = new MainWindowViewModel(defaultUrl, ChromiumWebBrowser);
+            InitializeComponent();
+
+            Browser.RegisterAsyncJsObject("appHost", new JavascriptInterface());
+
+            DataContext = new MainWindowViewModel(defaultUrl, Browser); ;
         }
 
         private static void InitializeCef()

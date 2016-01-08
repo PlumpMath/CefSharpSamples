@@ -12,10 +12,16 @@
     <div id="interface-area">
         <p>Message area:</p>
     </div>
-
+    <br/>
     <div>
         <label>The value of this text box can be fetched from the application:</label>
-        <input type="text" id="retrieve-text" />
+        <input type="text" id="retrieve-text" value="Initial value"/>
+    </div>
+    <br />
+    <div>
+        <label>You can send a message to the host application and show it there:</label>
+        <input type="text" id="apphost-message" value="Hello World!" />
+        <input type="button" value="load url" onclick="window.applicationInterface.showMessage();" />
     </div>
 
     <script type="text/javascript" src="./ApplicationInterface.js"></script>

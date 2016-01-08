@@ -13,5 +13,9 @@ window.applicationInterface = {
         var element = document.getElementById('retrieve-text');
 
         return element.value;
+    },
+
+    showMessage: function () {
+        window.appHost.showMessage(document.getElementById('apphost-message').value);
     }
 };

@@ -64,6 +64,7 @@
     <Compile Include="CefBrowser\CustomSchemeHandlerFactory.cs" />
     <Compile Include="CefBrowser\EmbeddedFileResourceHandler.cs" />
     <Compile Include="CefBrowser\LocalFileResourceHandler.cs" />
+    <Compile Include="Model\JavascriptInterface.cs" />
     <Compile Include="Model\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

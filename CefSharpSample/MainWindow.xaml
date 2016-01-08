@@ -26,12 +26,13 @@
             <Button Content="Open embedded file" Grid.Column="2" Command="{Binding OpenEmbeddedFileCommand}" />
         </Grid>
 
-        <cefSharp:ChromiumWebBrowser
-            Grid.Row="1"
-            Name="ChromiumWebBrowser"
-            Title="{Binding BrowserTitle, Mode=OneWay}"
-            Address="{Binding BrowserAddress, Mode=OneWay}"
-        />
+        <Grid Grid.Row="1" Name="BrowserContainer">
+            <cefSharp:ChromiumWebBrowser
+                Grid.Row="1"
+                Name="Browser"
+                Address="{Binding BrowserAddress, Mode=OneWay}"
+            />
+        </Grid>
         
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
