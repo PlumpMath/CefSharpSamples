@@ -7,5 +7,11 @@ window.applicationInterface = {
         messageNode.appendChild(document.createTextNode(text));
 
         container.appendChild(messageNode);
+    },
+
+    loadText: function() {
+        var element = document.getElementById('retrieve-text');
+
+        return element.value;
     }
 };

@@ -38,11 +38,13 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
             <Label Grid.Column="0" Content="Message to display:" />
-            <TextBox Grid.Column="1" Width="200" Text="{Binding MessageText, Mode=OneWayToSource}" />
+            <TextBox Grid.Column="1" Width="200" Text="{Binding MessageText, Mode=TwoWay}" />
             <Button Grid.Column="2" Content="Send message to browser" Command="{Binding SendMessageToBrowserCommand}" />
+            <Button Grid.Column="3" Content="Fetch message from Browser" Command="{Binding FetchMessageFromBrowserCommand}" />
         </Grid> 
     </Grid>
 </Window>

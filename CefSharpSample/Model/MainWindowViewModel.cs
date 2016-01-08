@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using CefSharp;
 
@@ -9,7 +10,13 @@ namespace CefSharpSample.Model
         private readonly string _defaultUrl;
         private readonly IWebBrowser _browser;
 
-        public string MessageText { get; set; }
+        private string _messageText;
+
+        public string MessageText
+        {
+            get { return _messageText; }
+            set { SetStringProperty("MessageText", ref _messageText, value); }
+        }
 
         private string _browserTitle;
         public string BrowserTitle
@@ -68,6 +75,24 @@ namespace CefSharpSample.Model
 
             _browser.ExecuteScriptAsync("window.applicationInterface.addMessage", MessageText);
         }
+
+        private ICommand _fetchMessageFromBrowserCommand;
+        public ICommand FetchMessageFromBrowserCommand => _fetchMessageFromBrowserCommand ?? (_fetchMessageFromBrowserCommand = new CommandHandler(FetchMessageFromBrowser, true));
+
+        public void FetchMessageFromBrowser()
+        {
+            var task = _browser.EvaluateScriptAsync("window.applicationInterface.loadText();");
+
+            task.ContinueWith(t =>
+            {
+                if (!t.IsFaulted)
+                {
+                    var response = t.Result;
+                    MessageText = response.Success ? ((string)response.Result ?? String.Empty) : response.Message;
+                }
+            }, TaskScheduler.FromCurrentSynchronizationContext());
+        }
+
         #endregion
 
     }
