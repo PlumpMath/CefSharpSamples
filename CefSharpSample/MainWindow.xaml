@@ -6,8 +6,26 @@
         xmlns:local="clr-namespace:CefSharpSample"
         xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="768" Width="1024">
     <Grid>
-        <cefSharp:ChromiumWebBrowser Grid.Row="0" Address="http://thinktecture.com" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Default" Grid.Column="0" Command="{Binding DefaultCommand}" />
+        </Grid>
+
+        <cefSharp:ChromiumWebBrowser
+            Grid.Row="1"
+            Title="{Binding BrowserTitle}"
+            Address="{Binding BrowserAddress, Mode=OneWay}"
+        />
     </Grid>
 </Window>
