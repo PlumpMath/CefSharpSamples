@@ -17,10 +17,12 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <Button Content="Open Default Url" Grid.Column="0" Command="{Binding DefaultCommand}" />
-            <Button Content="Open Local File" Grid.Column="1" Command="{Binding OpenLocalFileCommand}" />
+            <Button Content="Open default url" Grid.Column="0" Command="{Binding DefaultCommand}" />
+            <Button Content="Open local file" Grid.Column="1" Command="{Binding OpenLocalFileCommand}" />
+            <Button Content="Open embedded file" Grid.Column="2" Command="{Binding OpenEmbeddedFileCommand}" />
         </Grid>
 
         <cefSharp:ChromiumWebBrowser

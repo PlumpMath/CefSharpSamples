@@ -10,6 +10,9 @@ namespace CefSharpSample
             if (schemeName == "local")
                 return new LocalFileResourceHandler();
 
+            if (schemeName == "embedded")
+                return new EmbeddedFileResourceHandler();
+
             throw new Exception($"Requested scheme '{schemeName}' is not known.");
         }
     }

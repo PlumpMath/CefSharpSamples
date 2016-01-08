@@ -31,6 +31,12 @@ namespace CefSharpSample
                 SchemeHandlerFactory = new CustomSchemeHandlerfactory(),
             });
 
+            cefSettings.RegisterScheme(new CefCustomScheme()
+            {
+                SchemeName = "embedded",
+                SchemeHandlerFactory = new CustomSchemeHandlerfactory(),
+            });
+
             if (!Cef.Initialize(cefSettings))
             {
                 throw new Exception("Unable to Initialize Cef");

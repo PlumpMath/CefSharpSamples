@@ -35,9 +35,19 @@ namespace CefSharpSample
 
         public ICommand OpenLocalFileCommand => _openLocalFileCommand ?? (_openLocalFileCommand = new CommandHandler(OpenLocalFile, true));
 
+
+        private ICommand _openEmbeddedFileCommand;
+        public ICommand OpenEmbeddedFileCommand => _openEmbeddedFileCommand ?? (_openEmbeddedFileCommand = new CommandHandler(OpenEmbeddedFile, true));
+
         public void OpenLocalFile()
         {
             BrowserAddress = "local://dummypath/LocalSample.html";
+        }
+
+
+        public void OpenEmbeddedFile()
+        {
+            BrowserAddress = "embedded://dummypath/EmbeddedSample.html";
         }
     }
 }
