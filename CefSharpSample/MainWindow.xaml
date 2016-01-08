@@ -19,7 +19,8 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <Button Content="Default" Grid.Column="0" Command="{Binding DefaultCommand}" />
+            <Button Content="Open Default Url" Grid.Column="0" Command="{Binding DefaultCommand}" />
+            <Button Content="Open Local File" Grid.Column="1" Command="{Binding OpenLocalFileCommand}" />
         </Grid>
 
         <cefSharp:ChromiumWebBrowser
