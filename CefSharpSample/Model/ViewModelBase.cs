@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace CefSharpSample
+namespace CefSharpSample.Model
 {
     public class ViewModelBase : INotifyPropertyChanged
     {

@@ -27,7 +27,7 @@
 
         <cefSharp:ChromiumWebBrowser
             Grid.Row="1"
-            Title="{Binding BrowserTitle}"
+            Title="{Binding BrowserTitle, Mode=OneWay}"
             Address="{Binding BrowserAddress, Mode=OneWay}"
         />
     </Grid>

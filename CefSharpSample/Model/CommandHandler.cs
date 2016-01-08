@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Input;
 
-namespace CefSharpSample
+namespace CefSharpSample.Model
 {
     public class CommandHandler : ICommand
     {

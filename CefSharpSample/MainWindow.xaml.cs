@@ -2,6 +2,8 @@
 using System.Configuration;
 using System.Windows;
 using CefSharp;
+using CefSharpSample.CefBrowser;
+using CefSharpSample.Model;
 
 namespace CefSharpSample
 {

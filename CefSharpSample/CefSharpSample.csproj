@@ -61,10 +61,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CustomSchemeHandlerFactory.cs" />
-    <Compile Include="EmbeddedFileResourceHandler.cs" />
-    <Compile Include="LocalFileResourceHandler.cs" />
-    <Compile Include="ViewModelBase.cs" />
+    <Compile Include="CefBrowser\CustomSchemeHandlerFactory.cs" />
+    <Compile Include="CefBrowser\EmbeddedFileResourceHandler.cs" />
+    <Compile Include="CefBrowser\LocalFileResourceHandler.cs" />
+    <Compile Include="Model\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -73,14 +73,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CommandHandler.cs" />
+    <Compile Include="Model\CommandHandler.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="Model\MainWindowViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

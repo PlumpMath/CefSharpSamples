@@ -1,7 +1,7 @@
 ﻿using System;
 using CefSharp;
 
-namespace CefSharpSample
+namespace CefSharpSample.CefBrowser
 {
     public class CustomSchemeHandlerfactory : ISchemeHandlerFactory
     {

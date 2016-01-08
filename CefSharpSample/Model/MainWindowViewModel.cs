@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace CefSharpSample
+namespace CefSharpSample.Model
 {
     public class MainWindowViewModel :ViewModelBase
     {

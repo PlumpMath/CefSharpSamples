@@ -1,18 +1,13 @@
 using System;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Reflection;
 using System.Threading.Tasks;
 using CefSharp;
 
-namespace CefSharpSample
+namespace CefSharpSample.CefBrowser
 {
-    public class EmbeddedFileResourceHandler : IResourceHandler
+    public class LocalFileResourceHandler : IResourceHandler
     {
-        private static readonly Assembly ResourceAssembly = Assembly.GetExecutingAssembly();
-        private static readonly string[] AvailableFiles = ResourceAssembly.GetManifestResourceNames();
-
         private string mimeType;
         private Stream stream;
 
@@ -20,17 +15,17 @@ namespace CefSharpSample
         {
             // The 'host' portion is entirely ignored by this scheme handler.
             var uri = new Uri(request.Url);
-            var fileName = uri.AbsolutePath.Substring(1); // remove starting slash
+            var fileName = uri.AbsolutePath;
 
-            var resourceName = "CefSharpSample.EmbeddedResources." + fileName;
+            var localFilePath = "./LocalFiles" + fileName;
 
-            if (AvailableFiles.Contains(resourceName))
+            if (File.Exists(localFilePath))
             {
                 Task.Run(() =>
                 {
                     using (callback)
                     {
-                        stream = ResourceAssembly.GetManifestResourceStream(resourceName);
+                        stream = File.OpenRead(localFilePath);
 
                         var fileExtension = Path.GetExtension(fileName);
                         mimeType = ResourceHandler.GetMimeType(fileExtension);
