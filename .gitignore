@@ -70,6 +70,7 @@ artifacts/
 # ReSharper is a .NET coding add-in
 _ReSharper*/
 *.[Rr]e[Ss]harper
+*.DotSettings
 *.DotSettings.user
 
 # DotCover is a Code Coverage Tool
