@@ -20,7 +20,7 @@ namespace CefSharpSample
 
             var defaultUrl = ConfigurationManager.AppSettings["defaultUrl"] ?? "http://thinktecture.com";
 
-            DataContext = new MainWindowViewModel(defaultUrl);
+            DataContext = new MainWindowViewModel(defaultUrl, ChromiumWebBrowser);
         }
 
         private static void InitializeCef()
